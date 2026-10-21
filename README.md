@@ -18,20 +18,18 @@ The test, discrete-distribution, power and matrix functions check their inputs a
 
 ## Install
 
-The package is not on npm yet. Until then, clone the repository and import from `src/`:
-
-```js
-import { twoSampleT, summarize } from './src/index.js';
+```sh
+npm install @skyseed/stats-core
 ```
 
-Once published: `npm install stats-core`.
+Pure ES modules, no dependencies, Node 18+ and modern browsers.
 
 ## Examples
 
 ### Welch t test from two samples
 
 ```js
-import { summarize, twoSampleT } from 'stats-core';
+import { summarize, twoSampleT } from '@skyseed/stats-core';
 
 const a = [27.5, 21.0, 19.0, 23.6, 17.0, 17.9, 16.9, 20.1, 21.9, 22.6, 23.1, 19.6, 19.0, 21.7, 21.4];
 const b = [27.1, 22.0, 20.8, 23.4, 23.4, 23.5, 25.8, 22.0, 24.8, 20.2, 21.9, 22.1, 22.9, 20.5, 24.4];
@@ -47,7 +45,7 @@ Pass `pooled: true` for the Student (equal variance) test, `tail: 'greater' | 'l
 ### Distributions and p-values
 
 ```js
-import { tInv, tSf, normInv, chiSqSf, fSf } from 'stats-core';
+import { tInv, tSf, normInv, chiSqSf, fSf } from '@skyseed/stats-core';
 
 tInv(0.975, 10);     // 2.2281  two-sided 95% critical value
 tSf(2.2281, 10);     // 0.0250  P(T > t)
@@ -59,7 +57,7 @@ fSf(4.1, 2, 12);     // 0.0440  the one-way ANOVA p-value for F = 4.1, df 2 and 
 ### Binomial and Poisson probabilities
 
 ```js
-import { binomPmf, binomSf, binomTestTwoSided, poisPmf } from 'stats-core';
+import { binomPmf, binomSf, binomTestTwoSided, poisPmf } from '@skyseed/stats-core';
 
 binomPmf(3, 10, 0.5);                // 0.1172
 binomSf(7, 10, 0.5);                 // 0.0547  P(X > 7)
@@ -71,7 +69,7 @@ poisPmf(3, 2);                       // 0.1804
 ### Tukey HSD
 
 ```js
-import { ptukey, qtukey } from 'stats-core';
+import { ptukey, qtukey } from '@skyseed/stats-core';
 
 ptukey(3.5, 3, 20);     // 0.9441  P(Q <= 3.5) for 3 groups, 20 error df
 qtukey(0.95, 3, 20);    // 3.5779  critical value for Tukey intervals at 95%
@@ -80,7 +78,7 @@ qtukey(0.95, 3, 20);    // 3.5779  critical value for Tukey intervals at 95%
 ### Power and sample size
 
 ```js
-import { power, solveN, solveEffect } from 'stats-core';
+import { power, solveN, solveEffect } from '@skyseed/stats-core';
 
 power('ind', 0.5, 64, 0.05);        // 0.8015  two-sample t test, d = 0.5, 64 per group
 solveN('ind', 0.5, 0.8, 0.05);      // 64      smallest n per group for 80% power
@@ -90,7 +88,7 @@ solveEffect('one', 30, 0.8, 0.05);  // 0.5292  smallest d detectable with n = 30
 ### Least squares
 
 ```js
-import { ols } from 'stats-core';
+import { ols } from '@skyseed/stats-core';
 
 const fit = ols([[1, 1], [1, 2], [1, 3], [1, 4]], [2, 4, 5, 8]);
 // fit.beta = [~0, 1.9]  fit.rss = 0.7  fit.xtxInv = (XtX)^-1
@@ -99,7 +97,7 @@ const fit = ols([[1, 1], [1, 2], [1, 3], [1, 4]], [2, 4, 5, 8]);
 ### Descriptive statistics
 
 ```js
-import { mean, sampleSD, popSD, quartilesSorted, parseNumberList } from 'stats-core';
+import { mean, sampleSD, popSD, quartilesSorted, parseNumberList } from '@skyseed/stats-core';
 
 const data = [2, 4, 4, 4, 5, 5, 7, 9];
 mean(data);                         // 5

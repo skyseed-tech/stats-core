@@ -1,5 +1,5 @@
 {
-  "name": "stats-core",
+  "name": "@skyseed/stats-core",
   "version": "0.1.0",
   "description": "Zero-dependency statistics in plain JavaScript: t tests, ANOVA F and Tukey HSD, binomial and Poisson probabilities, power and sample size, least squares.",
   "type": "module",
@@ -14,16 +14,44 @@
     "./ttest": "./src/ttest.js",
     "./package.json": "./package.json"
   },
-  "files": ["src", "LICENSE", "README.md", "CHANGELOG.md"],
+  "files": [
+    "src",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md"
+  ],
   "scripts": {
     "test": "node --test"
   },
-  "engines": { "node": ">=18" },
+  "engines": {
+    "node": ">=18"
+  },
   "sideEffects": false,
   "license": "MIT",
   "author": "SKYSEED TECH LLC",
-  "repository": { "type": "git", "url": "git+https://github.com/skyseed-tech/stats-core.git" },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skyseed-tech/stats-core.git"
+  },
   "homepage": "https://cn8t.com/",
-  "bugs": { "url": "https://github.com/skyseed-tech/stats-core/issues" },
-  "keywords": ["statistics", "t-test", "anova", "tukey-hsd", "p-value", "binomial", "poisson", "power-analysis", "sample-size", "regression", "esm", "zero-dependency"]
+  "bugs": {
+    "url": "https://github.com/skyseed-tech/stats-core/issues"
+  },
+  "keywords": [
+    "statistics",
+    "t-test",
+    "anova",
+    "tukey-hsd",
+    "p-value",
+    "binomial",
+    "poisson",
+    "power-analysis",
+    "sample-size",
+    "regression",
+    "esm",
+    "zero-dependency"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }
